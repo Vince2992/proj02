@@ -1,0 +1,496 @@
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+}
+
+.uiZoom:hover {
+  transform: scale(1.4, 1.4);
+  transition: transform 0.3s;
+}
+
+.uiZoom02:hover {
+  transform: scale(1.2, 1.2);
+  transition: transform 0.3s;
+}
+
+.uimove:hover {
+  transform: translate(4%, -4%);
+  transition: transform 0.3s;
+}
+
+#pipe {
+  margin-left: 25%;
+  border: 1em solid black;
+}
+
+#imgCap {
+  text-align: center;
+  margin-right: 2em;
+  font-weight: bold;
+}
+
+.imgShowcase {
+  width: 75%;
+  border: 0.5em solid black;
+}
+
+.imgShowcase04 {
+  margin-left: 7%;
+  width: 100%;
+}
+
+.gifShowcase {
+  width: 75%;
+}
+
+.gifShowcase02 {
+  width: 85%;
+}
+
+.imgShowcase02 {
+  width: 50%;
+  border: 0.5em solid black;
+}
+
+.redbbigText {
+  color: red;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.redText {
+  color: red;
+  font-weight: bold;
+}
+
+.orangeB {
+  color: orange;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.greenbbigText {
+  color: green;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.bigText02 {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.bigText03 {
+  font-size: 2.7em;
+}
+
+.maxbigfont {
+  font-size: 5em;
+}
+
+.lilfont {
+  font-size: 0.6em;
+}
+
+.italycs {
+  font-style: italic;
+}
+
+.oneHalfEm {
+  font-size: 1.5em;
+}
+
+.bzWhite {
+  background-color: white;
+}
+
+.lilwidth {
+  width: 24%;
+}
+
+.imgShowcase03 {
+  width: 75%;
+  margin-left: 15%;
+  border: 1em solid black;
+}
+
+.bgyellow {
+  text-align: center;
+  background-color: yellow;
+  border: 1px solid;
+  width: 67%;
+  margin-left: 20%;
+  margin-bottom: 2%;
+}
+
+.violetError {
+  color: #cc0066;
+}
+
+.margintp {
+  margin-top: 5%;
+}
+
+.imgShowcase05 {
+  width: 60%;
+}
+
+.imgShowcase06 {
+  width: 70%;
+}
+
+.greenShadow:hover {
+  animation: mymove 0.8s infinite;
+}
+
+@keyframes mymove {
+  50% {
+    text-shadow: 10px 10px 5px #00ff00;
+  }
+}
+
+.bgaqua {
+  background-color: #2dd2d2;
+  border: 1px solid #293d3d;
+}
+
+.bglawn {
+  background-color: #06f906;
+  border: 1px solid #293d3d;
+}
+
+.seventywidth {
+  width: 70%;
+  margin-left: 15%;
+}
+
+.bglightyell {
+  background-color: #ffffb3;
+  border: 1px solid #293d3d;
+}
+
+.bggrey {
+  color: white;
+  background-color: #293d3d;
+  border: 1px solid black;
+}
+
+
+.bookmargin {
+  margin-left: 30%;
+}
+
+
+.div01 {
+  background-image: url('bgimg01b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div02 {
+  background-image: url('bgimg01.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div03 {
+  background-image: url('bgimg02.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div04 {
+  background-image: url('bgimg02b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div05 {
+  background-image: url('bgimg03.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div06 {
+  background-image: url('bgimg03b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div07 {
+  background-image: url('bgimg04.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div08 {
+  background-image: url('bgimg04b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+
+.div09 {
+  background-image: url('bgimg05.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div10 {
+  background-image: url('bgimg05b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div11 {
+  background-image: url('bgimg06.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div12 {
+  background-image: url('bgimg06b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px white, 0 0 5px gray;
+}
+
+.div13 {
+  background-image: url('bgimg01b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.3px 1.3px 7px white;
+  font-weight: bold;
+}
+
+.div14 {
+  background-image: url('bgimg04b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 2px 2px 2.5px black, 0 0 16px #D0D0D0, 1px 1px 5px gray;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+}
+
+.div15 {
+  background-image: url('bgimg01b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 1.7px 1.7px black, 0 0 5px gray;
+  font-size: 1.05em;
+  font-weight: bold;
+  color: black;
+}
+
+.div16 {
+  background-image: url('bgimg03b.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-shadow: 0.5px 0.5px 2px gray, 0.5px 0.5px 5px white;
+}
+
+.txtshdw {
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px #D0D0D0, 0 0 5px gray;
+}
+
+.txtshdw02 {
+  text-shadow: 1.3px 1.3px 2px black;
+}
+
+.txxtshdw02 {
+  text-shadow: 1px 1px white;
+}
+
+.boxessem {
+  background-color: white;
+  opacity: 0.9;
+  width: 75%;
+  margin-left: 15%;
+  padding: 2%;
+  text-shadow: 1.8px 1.8px white;
+  font-size: 1.2em;
+}
+
+.btnmiddle {
+  width: 12%;
+  margin-left: 45%;
+  border: 1px solid;
+  margin-bottom: 2.5em;
+  text-shadow: 0.5px 0.5px 2px black, 0.5px 0.5px 3px white;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+
+.imageSpec {
+  border: 0.7em solid black;
+  width: 70%;
+}
+
+.imageSpec02 {
+  border: 0.5em solid black;
+  width: 80%;
+}
+
+.redTextBig02 {
+   font-size: 3em;
+   color: red;
+}
+
+.adjustment {
+  text-shadow: 0.5px 0.5px gray;
+  font-weight: bold;
+}
+
+.blueTextBig02 {
+   font-size: 3em;
+   color: white;
+   text-shadow: 2px 2px black;
+}
+
+.orangeTextBig02 {
+   font-size: 5em;
+   color: #ff5500;
+   text-shadow: 2px 2px black;
+}
+
+
+.bgwhitey {
+  text-align: center;
+  background-color: white;
+  border: 1px solid;
+  width: 67%;
+  margin-left: 20%;
+  margin-bottom: 2%;
+  padding: 2%;
+}
+
+.doppelSize {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  text-shadow: 1px 1px white;
+}
+
+.coloreBLack {
+  color: black;
+  text-shadow: 1px 1px gray;
+}
+
+.wwhite {
+  color: white;
+}
+
+.centernbold {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1.5px 1.5px black;
+}
+
+.boldbold {
+  font-weight: bold;
+}
+
+
+.imageSpecx2 {
+  border: 0.7em solid black;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.ùborder {
+  border-radius: 25px;
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+  opacity: 0.8;
+}
+
+.yborder {
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
+.reddtext {
+  font-size: 2em;
+  font-weight: bold;
+  color: green;
+  text-shadow: 1.5px 1.5px white;
+  background-color: white;
+  margin-left: 15%;
+  opacity: 0.8;
+  border-radius: 25px;
+  width: 75%;
+  border: 1px solid green;
+}
+
+img {
+  border-radius: 25px;
+}
+
+.div01, .div02, .div03, .div04, .div05, .div06, .div07, .div08, .div09, .div10, .div11, .div12, .div13, .div14, .div15, .div16 {
+  border-radius: 25px;
+}
+
+.bordernone {
+  border-radius: 0;
+}
+
+.reddtext02 {
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px white;
+  background-color: white;
+  margin-left: 15%;
+  opacity: 0.8;
+  border-radius: 25px;
+  width: 75%;
+  border: 1px solid black;
+}
+
+.borderround {
+  border-radius: 25px;
+}
+
+
+.redBookTitle {
+  color: red;
+  text-shadow: 1.3px 1.3px black;
+}
+
+.fntSiz {
+  font-size: 0.8em;;
+}
