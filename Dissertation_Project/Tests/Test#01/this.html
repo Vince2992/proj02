@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    .jpeg {
+      position: absolute;
+      z-index: -1;
+    }
+    .gif {
+      position: absolute;
+      margin-left: 250px;
+      margin-top: 100px;
+    }
+    .uimove2:hover {
+      transform: scale(5, 5);
+      transition: transform 0.3s;
+    }
+    .uimove1:hover {
+      transform: scale(2, 2);
+      transition: transform 0.3s;
+    }
+  </style>
+</head>
+
+<body style="background-color: lawngreen;">
+  <img class="gif uimove2" src="Testing.gif" style="height:100px;" />
+  <img class="jpeg uimove1" src="03.jpeg" style="height:400px;" />
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Dissertation Project.">
+  <meta name="author" content="Vincenzo Amendolara">
+  <meta name="keywords" content="Language, Society and Communiccation, Dissertation, Dissertation, CALL Project">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cardCss.css">
+  <link rel="stylesheet" href="readerCss.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="mixkit-crystal-clear-sea-water-seen-from-above-5019.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <!-- Start Navbar -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand uimove" href="Home/index.html"><i>#IdiomatiGO!</i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active uimove3">
+          <a class="nav-link" href="Home/index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item uimove3">
+          <a class="nav-link" href="reader.html" target="_target">Reader</a>
+        </li>
+        <li class="nav-item active btnmargn uimove">
+          <button id="textGrow" type="button" class="btn btn-secondary mb-1 d-none d-md-inline lilMargLeft">Aa↑</button>
+        </li>
+        <li class="nav-item active btnmargn uimove">
+          <button id="textShrink" type="button" class="btn btn-secondary mb-1 d-none d-md-inline lilMargLeft">Aa↓</button>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div class="mr-sm-4">
+          <div>
+            Read the articles aloud!
+          </div>
+          <button type="button" class="btn btn-success mr-sm-2 uimove" onclick="restart()">Read!</button>
+          <button id="pause" type="button" class="btn btn-warning mr-sm-2 uimove" onclick="readPause()"><strong>||</strong></button>
+          <button id="stopEvrth" type="button" class="btn btn-primary" onclick="readCancel()" data-toggle="tooltip" data-placement="bottom" title="STOP THE AUDIO!!!"></button>
+        </div>
+        <input id="insertSpeak" class="form-control mt-2 mr-sm-2" placeholder="Insert text to read aloud.." aria-label="text-to-speech">
+        <button type="button" class="btn btn-info my-2 my-sm-0 uimove" type="submit" onclick="textToAudio2()">Read!</button>
+      </form>
+    </div>
+  </nav>
+  <!-- End of Navbar -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="one col-6" data-aos="fade-right" data-aos-duration="800">
+        <h1 id="cardTitle">Den Wald vor lauter Bäumen nicht sehen:</h1>
+        <br />
+        <img id="hamSlot" class="cardImg noDisplay" src="07.jpg" />
+        <img id="baumSlot" class="cardImg" src="06.jpg" />
+        <br /><br /><br />
+      </div>
+      <div class="two col-6" data-aos="fade-left" data-aos-duration="800">
+        <!-- Card Description - START -->
+        <ul class="nav nav-tabs flex-column flex-sm-row" id="myTab" role="tablist">
+          <li class="uiZoom langPin nav-item flex-sm-fill text-sm-center active">
+            <a class="langCard nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Deutsch</a>
+          </li>
+          <li class="uiZoom langPin nav-item flex-sm-fill text-sm-center">
+            <a class="langCard nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">English</a>
+          </li>
+          <li class="uiZoom langPin nav-item flex-sm-fill text-sm-center">
+            <a class="langCard nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Italiano</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="teszt descPane tab-pane fade show active paddinggen" id="home" role="tabpanel" aria-labelledby="home-tab">
+            "Wenn man etwas einfaches, oft offensichtliches, nicht sofort sieht bzw. versteht, weil man von mehreren (oft unnötigen) Sachen / Details abgelenkt wird."
+          </div>
+          <div class="descPane tab-pane fade paddinggen" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            "Don't see the forest for the trees", "don't grasp the obvious immediately"
+          </div>
+          <div class="descPane tab-pane fade paddinggen" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <span class="redbbigText">"Avere i prosciutti sugli occhi" </span> <button id="imgTransl" type="button" class="btn btn-info">ImgTransl</button>, "non vedere qualcosa che si ha sotto il naso", "non cogliere subito l'ovvio"
+          </div>
+        </div>
+        <br />
+        <div class="card uiZoom03">
+          <div class="card-header fontsizze">
+            <strong style="color:gray">Emoji Translate:</strong>
+          </div>
+          <div id="emojicard" class="card-body">
+            <h5 class="card-title">Suggested Emoji Rendering:<br /><br /></h5>
+            <!--<h6 class="card-text">Suggested Emoji Rendering:</h6>-->
+            <ul class="nobullets02">
+              <li>
+                <div class="uiZoom dispinl fontsizzexxl">🌲🍂🐻🌲🐦🌲</div>
+                <div class="uiZoom dispinl marginlefft04">
+                  ➡️</div>
+                <div class="uiZoom dispinl marginlefft06 fontsizze">🌲 🌲 🌲</div>
+                <div class="uiZoom dispinl marginlefft06">❌👀❌🙈</div>
+                <br /><br />
+              </li>
+              <li>
+                <div class="uiZoom dispinl marginlefft04 fontsizzexxl redText">Den Wald</div>
+                <div class="uiZoom dispinl marginlefft05">
+                  vor</div>
+                <div class="uiZoom dispinl marginlefft06 fontsizze greenText"> lauter Bäumen</div>
+                <div class="uiZoom dispinl marginlefft blueeText"> nicht sehen</div>
+              </li>
+              <li>
+                <div class="uiZoom dispinl marginlefft04 fontsizzexxl redText">The forest</div>
+                <div class="uiZoom dispinl marginlefft803">
+                  because of</div>
+                <div class="uiZoom dispinl marginlefft03 fontsizze greenText"> the many trees</div>
+                <div class="uiZoom dispinl marginlefft03 blueeText"> do not see</div>
+              </li>
+              <div class="uiZoom dispinl marginlefft04 fontsizze02 redText">La foresta</div>
+              <div class="uiZoom dispinl marginlefft05">
+                per (via)</div>
+              <div class="uiZoom dispinl marginlefft03 fontsizze greenText"> (de)i tanti alberi</div>
+              <div class="uiZoom dispinl marginlefft blueeText"> non vedere</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <!-- Card Description - END -->
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+  <br /><br />
+
+
+
+  <br /><br />
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col d-flex justify-content-center" data-aos="flip-left" data-aos-duration="800">
+        <div class="card uiZoom" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1538935732373-f7a495fea3f6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1127&q=80" class="card-img-top" alt="...">
+          <div id="cardCategory01" class="card-body">
+            <h5 class="card-title"><strong>Natur:</strong></h5>
+            <p class="card-text">
+              Eine Sammlung von Redewendungen, die mit der Natur zu tun haben (oder auch nicht😉!)
+            </p>
+            <a href="#" class="btn btn-primary">Jetzt erforschen!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center" data-aos="flip-right" data-aos-duration="800">
+        <div class="card uiZoom" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1509823672-d05d81e85f6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
+          <div id="cardCategory03" class="card-body">
+            <h5 class="card-title"><strong>5 Sinne:</strong></h5>
+            <p class="card-text">Eine Sammlung von Redewendungen, die mit den fünf Sinnen zu tun haben (oder auch nicht😉!)</p>
+            <a href="#" class="btn btn-primary">Jetzt erforschen!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <br /><br /><br /><br /><br />
+
+  <!-- Multimedia Training - START -->
+  <div class="row">
+    <div class="four col-4" data-aos="fade-up-right" data-aos-duration="1000">
+      <h1 class="cardTitleS hovRed">Wald vor lauter Bäumen.. (Clip):</h1>
+      <div class="diVideo" data-aos="zoom-in" data-aos-duration="700">
+        <video width="400" height="300" controls class="uiZoom02">
+          <source src="Bäume.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="two col-5" data-aos="fade-left" data-aos-duration="800">
+      <!-- Card Description - START -->
+      <ul class="nav nav-tabs flex-column flex-sm-row" id="myTab" role="tablist">
+        <li class="uiZoom langPin nav-item flex-sm-fill text-sm-center active">
+          <a class="langCard nav-link active" id="home-tab02" data-toggle="tab" href="#home02" role="tab" aria-controls="home" aria-selected="true">Deutsch</a>
+        </li>
+        <li class="uiZoom langPin nav-item flex-sm-fill text-sm-center">
+          <a class="langCard nav-link" id="profile-tab02" data-toggle="tab" href="#profile02" role="tab" aria-controls="profile" aria-selected="false">English</a>
+        </li>
+        <li class="uiZoom langPin nav-item flex-sm-fill text-sm-center">
+          <a class="langCard nav-link" id="contact-tab02" data-toggle="tab" href="#contact02" role="tab" aria-controls="contact" aria-selected="false">Italiano</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="ff descPane tab-pane fade show active" id="home02" role="tabpanel" aria-labelledby="home-tab">
+          Wenn man den Wald vor lauter Bäumen nicht sieht, heißt das, dass man sich oft <span class="phrasal">in</span> unnötigen Details <span class="phrasal">vertieft</span>
+          und somit das Gesamtbild, das man meist direkt <br /><span class="idioms">vor der Nase hat</span>, <span class="phracoll">aus den Augen verliert</span>,
+          wobei man sich eher an das Wesentliche halten sollte
+          <br />und somit die Lage besser <span class="idioms">im Griff zu haben</span>.
+        </div>
+        <div class="ff descPane tab-pane fade" id="profile02" role="tabpanel" aria-labelledby="profile-tab">
+          "Don't see the forest for the many trees"
+          ( "den Wald vor lauter Bäumen nicht sehen" ) means that you often <span class="phrasal">get lost in</span> unnecessary details,
+          <span class="phracoll">losing sight of</span> <span class="phrasal">the big picture</span>, which you basically <span class="idioms">have under your nose</span>.
+          By keeping <span class="phrasal">focus on</span> what is really essential instead, you should be able to better handle the problem <span class="idioms">at hand</span>.
+        </div>
+        <div class="ff descPane tab-pane fade" id="contact02" role="tabpanel" aria-labelledby="contact-tab">
+          Se "non si vede la foresta per via degli alberi"
+          ( "den Wald vor lauter Bäumen nicht sehen" ),
+          significa che spesso <span class="phrasal">ci si perde in</span> dettagli inutili,
+          <span class="phracoll">perdendo di vista</span> il <span class="phrasal">quadro d'insieme</span> <br />che si <span class="idioms">ha praticamente sotto il naso</span>,
+          quando, invece, ci si dovrebbe <span class="phrasal">concentrare</span> piuttosto <span class="phrasal">sull</span>'essenziale per avere la situazione meglio <span class="phrasal">sotto controllo</span>.
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="five col-3" data-aos="fade-up-left" data-aos-duration="1000">
+
+      <div id="wordFilter" class="card card-body wordFilter">
+        <div style="text-align: center; line-height: 5%; font-size: 0.9em;">
+          <h3 style="font-family: 'Itim', cursive; font-weight: bold;">Word-Filter:</h3>
+        </div>
+
+        <br />
+        <div class="custom-control custom-switch colorHover01">
+          <input type="checkbox" class="custom-control-input uimove" id="phrasal">
+          <label class="custom-control-label" for="phrasal"><strong>Kollokationen</strong></label>
+        </div>
+        <div class="custom-control custom-switch colorHover01">
+          <input type="checkbox" class="custom-control-input" id="collocations">
+          <label class="custom-control-label" for="collocations"><strong>Funktionsverbgefüge</strong></label>
+        </div>
+        <div class="custom-control custom-switch colorHover01">
+          <input type="checkbox" class="custom-control-input" id="idioms">
+          <label class="custom-control-label" for="idioms"><strong>Redewendungen</strong></label>
+        </div>
+      </div>
+      <br /><br />
+
+      <br />
+    </div>
+  </div>
+  <!-- Multimedia Training - END -->
+
+
+  <br /><br /><br /><br />
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col six d-flex justify-content-center" data-aos="fade-down" data-aos-duration="1000">
+        <iframe style="width: 525px; height:500px;" src="shortExercise01.html" title="Exercises" class="uiZoom">
+
+        </iframe>
+      </div>
+      <div class="col seven d-flex justify-content-center" data-aos="fade-up" data-aos-duration="1000">
+
+        <iframe style="width: 525px; height:500px;" src="articles.html" title="Corpus" class="uiZoom">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br /><br />
+  <div class="container">
+    <div class="row">
+      <div class="one col-5" data-aos="fade-left" data-aos-duration="800">
+        <h1 class="hovCol">Wald vor lauter Bäumen.. (GIF):</h1>
+        <br />
+        <video class="uiZoom" style="text-align: center; margin-left: 1.4em;" width="400" height="300" src="bb.mp4" autoplay muted loop />
+        </video>
+        <br />
+        <a href="bb.mp4" download target="_blank">
+          <button class="btn btn-light margeLEFT">Download GIF</button>
+        </a>
+        <br />
+      </div>
+      <div class="one col-7" data-aos="fade-right" data-aos-duration="800">
+        <h1 class="hovCol">Wald vor lauter Bäumen.. <br />(.json Format):</h1>
+        <br />
+        <iframe style="width: 525px; height:500px; margin-left: 3em;" src="json.html" title="Exercises" class="uiZoom">
+
+        </iframe>
+        <br /><br /><br />
+      </div>
+    </div>
+  </div>
+
+
+  <br /><br />
+
+  <div id="footer" class="container-fluid">
+    <div class="row">
+
+      <div class="col" data-aos="fade-right">
+        <br />
+        <h2><em>#IdiomatiGO!</em></h2>
+        <p>
+          <em>IdiomatiGO!</em> (<em>Computer Assisted Language Learning</em>) as a new way of experiencing education. Join the community.
+        </p>
+        <p>
+          © 2020-2021 Vincenzo Amendolara (vincenzo.amendolara2@studio.unibo.it)
+        </p>
+        <p>
+          <strong>Alma Mater - University of Bologna, Italy</strong> (<a href="https://www.unibo.it/it">https://www.unibo.it/it</a>)
+        </p>
+        <br /><br />
+      </div>
+      <div class="d-none d-md-block col">
+
+      </div>
+      <div class="col" data-aos="fade-left">
+        <br />
+        <h2>Contact us:</h2>
+        <p>
+          Ask for more educational content or personal lessons.<br />Leave us a message with your requests.
+        </p>
+
+        <form action="mailto:vincenzo.amendolara2@studio.unibo.it" method="post" enctype="text/plain">
+          <label class="weightBold" for="guestName">Your Name:</label><br />
+          <input type="text" name="Your Name" id="guestName"><br><br />
+          <label class="weightBold" for="guestMessage">Your Message:</label><br />
+          <textarea id="guestMessage" name="Your Message" rows="4" cols="40">
+
+          </textarea><br /><br />
+          <input type="submit" value="Send" class="uimove2">
+        </form>
+        <br />
+      </div>
+    </div>
+    <br />
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col d-none d-lg-block col">
+        </div>
+        <div class="col">
+          <p class="finalCaption">
+            <em>#IdiomatiGO!</em> © 2020-2021 Vincenzo Amendolara
+          </p>
+        </div>
+        <div class="col d-none d-lg-block col">
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="readerJs.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+
+</html>

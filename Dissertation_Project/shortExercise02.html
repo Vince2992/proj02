@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<style>
+  #ulSelectB {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .selectli {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  #selectBox{
+    border: solid 2px green;
+    width:50%;
+  }
+
+  .col-8 {
+    padding-top:4%;
+    padding-bottom:4%;
+  }
+
+  h1, h3 {
+    text-align: center;
+  }
+
+</style>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+
+      </div>
+      <div class="col-8">
+        <div id="ex1">
+            <h1><em>#CALL_Me</em> Exercises: </h1>
+            <br />
+            <h3>Short Exercise #02:<br />
+                (Phrases, Patterns and Collocations)
+            </h3>
+            <br /><br />
+
+            <h4>B. Write one word in each gap:</h4>
+            <br />
+            <div id="selectBox">
+              <ul id="ulSelectB">
+                <li class="selectli">
+                  on
+                </li>
+                <li class="selectli">
+                  under
+                </li>
+                <li class="selectli">
+                  out
+                </li>
+                <li class="selectli">
+                  on
+                </li>
+                <li class="selectli">
+                  out
+                </li>
+              </ul>
+              </div>
+            <br />
+            <br />
+            <ol>
+              <li>
+                Jim seems to be <input type="text" id="under" /> the misapprehension that tomorrow's a holiday. It isn't.<button onclick="under()">Check</button>
+              </li>
+              <br>
+              <li>
+                These findings cast doubt <input type="text" id="on01" /> previous research done in this field. <button onclick="on01()">Check</button>
+              </li>
+              <br />
+              <li>
+                This photo's a little <input type="text" id="out01" /> of focus, but you can still see their faces. <button onclick="out01()">Check</button>
+              </li>
+              <br />
+              <li>
+                Look <input type="text" id="on02" /> the bright side - it's nearly the end of term. <button onclick="on02()">Check</button>
+              </li>
+              <br />
+              <li>
+                Dad said that my borrowing the car tonight was <input type="text" id="out02" /> of question. <button onclick="out02()">Check</button>
+              </li>
+
+            </ol>
+
+          </div>
+      </div>
+      <div class="col-2">
+
+      </div>
+    </div>
+  </div>
+
+
+      <br /><br />
+    <script>
+    function under() {
+        let one = document.getElementById("under").value;
+        if (one === "under") {
+          document.getElementById("under").style.backgroundColor = "green";
+        } else {
+          document.getElementById("under").style.backgroundColor = "red";
+
+        }
+      }
+
+      function on01() {
+        let one = document.getElementById("on01").value;
+        if (one === "on") {
+          document.getElementById("on01").style.backgroundColor = "green";
+        } else {
+          document.getElementById("on01").style.backgroundColor = "red";
+
+        }
+      }
+
+      function out01() {
+        let one = document.getElementById("out01").value;
+        if (one === "out") {
+          document.getElementById("out01").style.backgroundColor = "green";
+        } else {
+          document.getElementById("out01").style.backgroundColor = "red";
+
+        }
+      }
+
+      function out02() {
+        let one = document.getElementById("out02").value;
+        if (one === "out") {
+          document.getElementById("out02").style.backgroundColor = "green";
+        } else {
+          document.getElementById("out02").style.backgroundColor = "red";
+
+        }
+      }
+
+      function on02() {
+        let one = document.getElementById("on02").value;
+        if (one === "on") {
+          document.getElementById("on02").style.backgroundColor = "green";
+        } else {
+          document.getElementById("on02").style.backgroundColor = "red";
+
+        }
+      }
+
+    </script>
+
+</body>
+
+</html>

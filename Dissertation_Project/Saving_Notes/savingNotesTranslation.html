@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking</title>
+    <link href="savingNotesCss.css" rel="stylesheet">
+    <script src="savingNotesTranslationJs.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Notes</h1>
+    </header>
+
+    <main>
+      <section class="note-display">
+        <ul>
+
+        </ul>
+      </section>
+      <section class="new-note">
+        <h2>Enter a new note</h2>
+        <br />
+        <form>
+          <div>
+            <label for="title"><strong>New Word:</strong></label>
+            <input id="title" class="uimove2" type="text" placeholder="Insert Note Title..." required>
+          </div>
+          <br />
+          <div>
+            <label for="meaningNote"><strong>Meaning of the Word:</strong></label><br />
+            <p>
+              Write down the meaning of your newly learned word/s
+            </p>
+            <textarea id="meaningNote" class="uimove2" rows="6" cols="50">
+            </textarea>
+          </div>
+          <div>
+            <label for="translationNote"><strong>Translation of the Word:</strong></label><br />
+            <p>
+              Write down the translation(s) of the newly learned word/s
+            </p>
+            <textarea id="translationNote" class="uimove2" rows="6" cols="50">
+            </textarea>
+          </div>
+          <div>
+            <label for="body"><strong>Comment:</strong></label><br /><br />
+            <textarea id="body" class="uimove2" rows="8" cols="50" required>
+            </textarea>
+          </div>
+          <div>
+            <button id="addNoteBtn" class="uimove2"><strong>Add Note</strong></button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

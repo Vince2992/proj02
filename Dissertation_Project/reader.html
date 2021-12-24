@@ -1,0 +1,763 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Dissertation Project - This is the Reader Page of the project. It functions as an online article reader and element searcher for language learning.">
+	<meta name="author" content="Vincenzo Amendolara">
+	<meta name="keywords" content="Language, Society and Communiccation, Dissertation, Dissertation, CALL Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Online Reader</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="readerCss.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+	<script src="//www.thefreedictionary.com/dict.js"></script>
+
+</head>
+
+<body ondblclick="dictionary()">
+
+	<!-- Start Navbar -->
+	<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand uimove" href="Home/index.html"><em>#idiomatiGO!</em></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active uimove3">
+					<a class="nav-link" href="Home/index.html">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<!--<li class="nav-item uimove3">
+					<a class="nav-link lilMargLeft" href="Dispensa/1.html" target="_target">Reader</a>
+				</li>-->
+				<li class="nav-item active btnmargn uimove">
+					<button id="textGrow" type="button" class="btn btn-secondary mb-1 d-none d-md-inline lilMargLeft">Aa↑</button>
+				</li>
+				<li class="nav-item active btnmargn uimove">
+					<button id="textShrink" type="button" class="btn btn-secondary mb-1 d-none d-md-inline lilMargLeft">Aa↓</button>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<div class="mr-sm-4">
+					<div>
+						Read the articles aloud!
+					</div>
+					<button type="button" class="btn btn-success mr-sm-2 uimove" onclick="restart()">Read!</button>
+					<button id="pause" type="button" class="btn btn-warning mr-sm-2 uimove" onclick="readPause()"><strong>||</strong></button>
+					<button id="stopEvrth" type="button" class="btn btn-primary" onclick="readCancel()" data-toggle="tooltip" data-placement="bottom" title="STOP THE AUDIO!!!"></button>
+				</div>
+				<input id="insertSpeak" class="form-control mt-2 mr-sm-2" placeholder="Insert text to read aloud.." aria-label="text-to-speech">
+				<button type="button" class="btn btn-info my-2 my-sm-0 uimove" type="submit" onclick="textToAudio2()">Read!</button>
+			</form>
+		</div>
+	</nav>
+
+	<!-- End of Navbar -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div id="one" class="col-md-5 col-lg-3 order-2 order-md-2 order-lg-1">
+				<div id="divToRemove02" class="centerText noDisplay">
+					<button type="button" class="btn btn-secondary uimove3">Show Theory Panel</button>
+				</div>
+				<br />
+				<div id="theoryBox">
+					<div>
+						<h2 class="dispInline"><strong>Theory: </strong></h2><button id="hideEl02" class="dispInline buttonHide uimove2">Hide</button>
+					</div>
+					<br />
+					<a href="#" class="lessonLink" onclick="theory01()">Full Theory - Lesson #01</a>
+					<p class="notes">
+						(Click here to open the Lesson in the reader)
+					</p>
+					<br />
+					<a href="Full_Theory-Lesson_01.pdf" download>
+						<button type="button" class="btn btn-info uimove2">Download Pdf</button>
+					</a>
+					<p class="notes">
+						(Download the Full Theory in Pdf format)
+					</p>
+				</div>
+				<div id="divToRemove03" class="centerText noDisplay">
+					<button type="button" class="btn btn-secondary uimove3">Show Text Panel</button>
+				</div>
+				<div id="textBox">
+					<div>
+						<h2 class="dispInline"><strong>Texts: </strong></h2><button id="hideEl03" class="dispInline buttonHide uimove2">Hide</button>
+					</div>
+					<br />
+					<select id="textSelector" class="custom-select uimove2">
+						<option value="noText">Please select a text...</option>
+						<option value="carol">A Christmas Carol</option>
+						<option value="sherlock">Sherlock Holmes' Adventures</option>
+					</select>
+					<p class="notes">
+						(Select an exercise text)
+					</p>
+					<br />
+					<p>
+						<a class="btn btn-primary uimove2" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+							<strong>Word-Filter</strong>
+						</a>
+						<button id="wordlistToggler" type="button" class="btn btn-secondary mt-md-1 uimove2">Wordlist</button>
+					</p>
+					<div class="collapse" id="collapseExample">
+						<div class="card card-body wordFilter">
+							<div style="text-align: center; line-height: 5%; font-size: 0.9em;">
+								<h3>Word-Filter:</h3>
+								<p class="notes">
+									(*Only with selected "Texts")
+								</p>
+							</div>
+
+							<div class="custom-control custom-switch colorHover01">
+								<input type="checkbox" class="custom-control-input" id="thinking">
+								<label class="custom-control-label" for="thinking"><strong>Topic Vocabulary - Thinking</strong></label>
+							</div>
+							<div class="custom-control custom-switch colorHover01">
+								<input type="checkbox" class="custom-control-input uimove" id="phrasal">
+								<label class="custom-control-label" for="phrasal"><strong>Phrasal Verbs</strong></label>
+							</div>
+							<div class="custom-control custom-switch colorHover01">
+								<input type="checkbox" class="custom-control-input" id="collocations">
+								<label class="custom-control-label" for="collocations"><strong>Phrases & Collocations</strong></label>
+							</div>
+							<div class="custom-control custom-switch colorHover01">
+								<input type="checkbox" class="custom-control-input" id="idioms">
+								<label class="custom-control-label" for="idioms"><strong>Idioms</strong></label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="latWordList">
+					<div style="text-align: center; line-height: 5%; font-size: 0.9em;">
+						<h3>Word-Lists:</h3>
+						<p class="notes">
+							<span class="weightBold">(*Only with selected "Texts")</span>
+						</p>
+					</div>
+					<br />
+					<div class="row">
+						<br />
+						<div class="col-5">
+							<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+								<a class="nav-link wl active uimove" id="v-pills-wordlist-tab" data-toggle="pill" href="#v-pills-wordlist" role="tab" aria-controls="v-pills-wordlist" aria-selected="true">Wordlists</a>
+								<a class="nav-link wl uimove" id="v-pills-think-tab" data-toggle="pill" href="#v-pills-think" role="tab" aria-controls="v-pills-think" aria-selected="false" onclick="think()">Topic - Thinking</a>
+								<a class="nav-link wl uimove" id="v-pills-phrasal-tab" data-toggle="pill" href="#v-pills-phrasal" role="tab" aria-controls="v-pills-phrasal" aria-selected="false" onclick="phrasal()">Phrasal Verbs</a>
+								<a class="nav-link wl uimove" id="v-pills-coll-tab" data-toggle="pill" href="#v-pills-coll" role="tab" aria-controls="v-pills-coll" aria-selected="false" onclick="coll()">Phrases & Collocations</a>
+								<a class="nav-link wl uimove" id="v-pills-idioms-tab" data-toggle="pill" href="#v-pills-idioms" role="tab" aria-controls="v-pills-idioms" aria-selected="false" onclick="idioms()">Idioms</a>
+							</div>
+						</div>
+						<div class="col-7">
+							<div class="tab-content" id="v-pills-tabContent">
+								<div class="tab-pane fade show active" id="v-pills-wordlist" role="tabpanel" aria-labelledby="v-pills-wordlist-tab">
+									<p style="font-size: 0.9em; margin-left:9%;">Click on a wordlist category below!</p>
+								</div>
+								<div class="tab-pane fade show active" id="v-pills-think" role="tabpanel" aria-labelledby="v-pills-think-tab">
+									<ul id="thinkList" class="wordlistS">
+
+									</ul>
+								</div>
+								<div class="tab-pane fade" id="v-pills-phrasal" role="tabpanel" aria-labelledby="v-pills-phrasal-tab">
+									<ul id="phrasalList" class="wordlistS">
+
+									</ul>
+								</div>
+								<div class="tab-pane fade" id="v-pills-coll" role="tabpanel" aria-labelledby="v-pills-coll-tab">
+									<ul id="collList" class="wordlistS">
+
+									</ul>
+								</div>
+								<div class="tab-pane fade" id="v-pills-idioms" role="tabpanel" aria-labelledby="v-pills-idioms-tab">
+									<ul id="idiomsList" class="wordlistS">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br />
+				<div id="divToRemove04" class="noDisplay centerText">
+					<button type="button" class="btn btn-secondary uimove3">Show Exercise Panel</button>
+				</div>
+				<div id="exerciseBox">
+					<div>
+						<h3 class="dispInline"><strong><span class="decUnderline">Exercises</span>: </strong></h3><button id="hideEl04" class="dispInline buttonHide uimove2">Hide</button>
+					</div>
+					<br />
+					<div class="btn-group dropright">
+						<button type="button" class="btn btn-danger dropdown-toggle uimove2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Short Exercises:
+						</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="shortExercise01.html" target="_blank">Short Exercise #01</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="shortExercise02.html" target="_blank">Short Exercise #02</a>
+						</div>
+					</div>
+					<br /><br />
+					<a href="Uebungen/uebungen.html" target="_blank">Go to the full <em>Exercise Page</em>... →</a>
+				</div>
+				<br />
+				<!--<div id="divToRemove05" class="centerText noDisplay">
+					<button type="button" class="btn btn-secondary uimove3">Show Idiom of the Day</button>
+				</div>
+				Idiom of the Day by TheFreeDictionary.com
+				<div id="idiomBox" style="width:350px;position:relative;background-color:;padding:4%;">
+					<div style="font:bold 12pt '';color:#000000">
+						<div>
+							<h3 class="dispInline"><strong>Idiom of the Day: </strong></h3><button id="hideEl05" class="dispInline buttonHide uimove2">Hide</button>
+						</div>
+					</div>
+					<br />
+					<style>
+						#IdiomOfTheDay {
+							width: 100%;
+							border: 1px #AFAFAF solid;
+							background-color:
+						}
+
+						#IdiomOfTheDay H3 {
+							margin-top: 0px;
+							font: bold 12pt '';
+							color: #000000
+						}
+
+						#IdiomOfTheDay TD {
+							font: normal 10pt '';
+							color: #000000
+						}
+
+						#IdiomOfTheDay A {
+							color: #0000FF
+						}
+					</style>
+					<div id="tfd_idiom_div">
+						<table id="IdiomOfTheDay">
+							<tr>
+								<td>
+									<h3><a href="//idioms.thefreedictionary.com/jet-setter" rel="nofollow">jet-setter</a></h3><span>A wealthy individual who travels globally, especially by private jet, to frequent fashionable resorts, social events, and the
+										like.</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<script type="text/javascript">
+						document.getElementById("tfd_idiom_div").style.visibility = "hidden"
+					</script>
+					<script type="text/javascript" async src="//img.tfd.com/daily/idiom-top.js" charset="UTF-8"></script>
+					<div style="font:normal 8pt '';color:#000000">
+						<a style="color:#000000" href="https://www.thefreedictionary.com/lookup.htm#Idiom-of-the-Day" rel="nofollow">Idiom of the Day</a>
+						provided by <a style="color:#000000" href="https://idioms.thefreedictionary.com/" rel="nofollow">TheFreeDictionary.com</a>
+					</div>
+				</div>
+				end of Idiom of the Day-->
+				<br />
+			</div>
+			<div id="two" class="col-md-7 col-lg-6 order-1 order-md-1 order-lg-2">
+				<hr /><br />
+				<h1 id="readerName"><em>#idiomatiGO! "Reader"</em></h1>
+				<br>
+				<hr /><br />
+				<div id="textOutput">
+
+				</div>
+			</div>
+			<div id="three" class="col-lg-3 order-3">
+				<div id="divToRemove01" class="noDisplay centerText">
+					<button type="button" class="btn btn-secondary uimove3">Show Note Panel</button>
+				</div>
+				<div id="noteBox">
+					<div class="centerText">
+						<h2 class="centerText dispInline"><span>Take Notes: </span></h2><button id="hideEl01" class="dispInline buttonHide uimove2">Hide</button>
+					</div>
+					<div class="centerText">
+						<button style="margin-top: 5%;" type="button" class="btn btn-dark uimove2" data-toggle="modal" data-target="#exampleModalCenter01">Go to Notes (Generic)</button>
+					</div>
+					<div class="modal fade bd-example-modal-lg" id="exampleModalCenter01" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalCenterTitle01"><strong><em>Your Notes:</em></strong></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<iframe src="Saving_Notes\savingNotesGeneric.html" style="border:none; height:60em; width:100%;" title="Saving Notes"></iframe>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="centerText">
+						<button style="margin-top: 5%;" type="button" class="btn btn-dark uimove2" data-toggle="modal" data-target="#exampleModalCenter02">Go to Translation Notes</button>
+					</div>
+					<div class="modal fade bd-example-modal-lg" id="exampleModalCenter02" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalCenterTitle02"><strong><em>Your Notes:</em></strong></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<iframe src="Saving_Notes\savingNotesTranslation.html" style="border:none; height:60em; width:100%;" title="Saving Notes"></iframe>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br />
+				<div id="divToRemove06" class="centerText nodisplay">
+					<button type="button" class="btn btn-secondary uimove3">Show Theory Bites</button>
+				</div>
+				<div class="accordion" id="accordionExample">
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingOne">
+							<h2 class="mb-0">
+								<button class="btn btn-link blacktext" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<strong>Present Perfect Simple</strong>
+								</button>
+							</h2>
+						</div>
+
+						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Present Perfect Simple: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoPPS()">To Reader</button></h2>
+								</h2>
+								<br />
+								<ul>
+									<li>
+										<span class="captionText">Situations and states that started in the past and are still true:</span><br />
+										I'<span class="redText"><strong>ve been</strong></span> a member of <em>NASA</em> for over five years.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">A series of actions continuing up to now:</span><br />
+										She'<span class="redText"><strong>s done</strong></span> a BA, an MA and a PhD so far.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">Completed actions at a time in the past which is not important or relevant:</span><br />
+										<span class="redText"><strong>Have</strong></span> you ever <span class="redText"><strong>read</strong></span> any books by <em>Edward De Bono</em>?.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">Completed actions where the important thing is the present result:</span><br />
+										She'<span class="redText"><strong>s been awarded</strong></span> a scholarship to study at Harvard.
+									</li>
+									<br />
+								</ul>
+								<br />
+								<table class="uimove3">
+									<tr>
+										<th class="theory">Words and phrases often used with the present perfect simple:</th>
+									</tr>
+									<tr>
+										<td>Since/ For/ It's the first/second/etc time/ Before/ Already/ Yet/ Ever/ Just/ Still/ Recently/ Up to now/ (Up) until now/ So far</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingTwo">
+							<h2 class="mb-0">
+								<button class="btn btn-link collapsed blacktext" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									<strong>Present Perfect Continuous</strong>
+								</button>
+							</h2>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Present Perfect Continuous: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoPPC()">To Reader</button></h2>
+								</h2>
+								<br />
+								<ul>
+									<li>
+										<span class="captionText">Actions and situations continuing up to the present (or just before the present):</span><br />
+										We'<span class="redText"><strong>ve</strong></span> all <span class="redText"><strong>been wondering</strong></span> what to get Tony for his birthday and we just can't decide.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">The future (in time clauses):</span><br />
+										I won't take my driving test until I<span class="redText"><strong>'ve been having</strong></span> lessons for at least two months.
+									</li>
+								</ul>
+								<br />
+								<table class="uimove3">
+									<tr>
+										<th class="watchOut"><span class="redText"><strong>Watch Out!:</strong></span></th>
+									</tr>
+									<tr>
+										<td>
+											<ul>
+												<li>
+													<span class="captionText">We usually use the present perfect simple to specify a particular number of times/things:</span><br /><br />
+													I<span class="redText"><strong>'ve written</strong></span> two essays this week.
+												</li>
+												<br />
+												<li>
+													<span class="captionText">We usually use the present perfect continuous to emphasize the duration of an action/situatiion:</span><br /><br />
+													(<span class="redText">X</span>) I<span class="redText"><strong>'ve worked</strong></span> here for five years. (no empahsis)<br />
+													(<span class="greenText">✓</span>) I<span class="redText"><strong>'ve been working</strong></span> here for five years. (emphasizes the duration)
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</table>
+								<br />
+								<table class="uimove3">
+									<tr>
+										<th class="theory">Words and phrases often used with the present perfect continuous:</th>
+									</tr>
+									<tr>
+										<td>Since/ For/ Just/ All day/week/etc</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingThree">
+							<h2 class="mb-0">
+								<button class="btn btn-link collapsed blacktext" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<strong>Past Simple</strong>
+								</button>
+							</h2>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Past Simple: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoPS()">To Reader</button></h2>
+								</h2>
+								<br />
+								<ul>
+									<li>
+										<span class="captionText">Single completed actions:</span><br />
+										<em>Sony</em> and <em>Philips</em><span class="redText"><strong> invented</strong></span> the Cd in the early 1980s.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">Repeated or habitual actions in the past:</span><br />
+										We<span class="redText"><strong> moved</strong></span> house a lot when I was a kid.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">General truths about the past:</span><br />
+										Early clocks</em><span class="redText"><strong> were</strong></span> usually very unreliable.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingFour">
+							<h2 class="mb-0">
+								<button class="btn btn-link collapsed blacktext" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									<strong>Past Continuous:</strong>
+								</button>
+							</h2>
+						</div>
+						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Past Continuous: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoPC()">To Reader</button></h2>
+								</h2>
+								<br />
+								<ul>
+									<li>
+										<span class="captionText">Actions in progress around a particular moment in the past:</span><br />
+										At the turn of the twentieth century, many discoveries <span class="redText"><strong>were being made</strong></span> in physics and other sciences.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">Actions in progress at a particular moment in the past:</span><br />
+										We<span class="redText"><strong> moved</strong></span> house a lot when I was a kid.
+									</li>
+									<br />
+									<li>
+										<span class="captionText">Temporary situations and series of actions in the past:</span><br />
+										At the time, I</em><span class="redText"><strong> was working</strong></span> for a large software company in California.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingFive">
+							<h2 class="mb-0">
+								<button class="btn btn-link collapsed blacktext" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+									<strong>Phrasal Verbs</strong>
+								</button>
+							</h2>
+						</div>
+						<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Phrasal Verbs: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoPhrasal()">To Reader</button></h2>
+								</h2>
+								<br />
+								<table class="uimove3" style="width:100%">
+									<tr>
+										<th colspan="2">Phrasal Verbs</th>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>brush up(on)</strong></td>
+										<td>practise and improve your skills or knowledge of something</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>come up with</strong></td>
+										<td>think of something such as an idea or a plan</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>face up to</strong></td>
+										<td>accept something and try to deal with it</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>figure out</strong></td>
+										<td>be able to understand something or solve a problem; understandwhat someone is like and why they behave in the way they do</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>hit upon</strong></td>
+										<td>suddenly have an idea; discover something by chance</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingSix">
+							<h2 class="mb-0">
+								<button class="btn btn-link collapsed blacktext" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+									<strong>Phrases and Collocations</strong>
+								</button>
+							</h2>
+						</div>
+						<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Phrases and Collocations: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoColl()">To Reader</button></h2>
+								<br />
+								<table class="uimove3" style="width:100%">
+									<tr>
+										<th colspan="2">Phrases and Collocations</th>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>basis</strong></td>
+										<td>basis for, on a daily/temporary/etc basis, on the basis of/that</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>associate</strong></td>
+										<td>associate with</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>consideration</strong></td>
+										<td>take into consideration, give consideration to</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>focus</strong></td>
+										<td>focus on, the focus of/for, in focus, out of focus</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>impression</strong></td>
+										<td>have/give the (false) impression that, do an impression (of)</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header accstyle uimove2 metal01" id="headingSeven">
+							<h2 class="mb-0">
+								<button class="btn btn-link collapsed blacktext" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+									<strong>Idioms</strong>
+								</button>
+							</h2>
+						</div>
+						<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+							<div class="card-body">
+								<h2>Idioms: <button type="button" class="btn btn-success lilBtn uimove2" onclick="theoIdio()">To Reader</button></h2>
+								</h2>
+								<br />
+								<table class="uimove3" style="width:100%">
+									<tr>
+										<th colspan="2">Idioms:</th>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>go to your head</strong></td>
+										<td>if success goes to your head, it makes you think that you are better or more important than you really are</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>have your wits about you</strong></td>
+										<td>be able to think quickly and make sensible decisions</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>in the dark (about)</strong></td>
+										<td>not knowing very much about something, because other people are keeping it secret from you</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>know what's what</strong></td>
+										<td>know the important facts about a situation</td>
+									</tr>
+									<tr>
+										<td class="firstcell"><strong>ring a bell</strong></td>
+										<td>something that rings a bell sounds familiar to you, although you cannot remember the exact details</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br />
+				<div class="centerText">
+					<button id="hideEl06" class="dispInline buttonHide uimove2">Hide Theory Bites</button>
+				</div>
+				<br />
+				<br />
+				<br />
+				<div id="divToRemove07" class="centerText nodisplay">
+					<button type="button" class="btn btn-secondary uimove3">Show Games</button>
+				</div>
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<a href="https://vince2992.github.io/SuperHangman/Hangman/index.html" target="_blank">
+							<div class="carousel-item active roundCorners uimove2">
+								<img class="d-block w-100 roundCorners blkBorder" src="02.png" alt="First slide">
+								<div class="carousel-caption d-none d-md-block">
+									<div class="capCol03">
+										<a href='https://vince2992.github.io/SuperHangman/Hangman/index.html' target="_blank" class="redText">
+											<h4><strong>Hangman:</strong></h4>
+											<p>PLAY NOW!!!</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a href="Exercise_n_01/Ex.1.html" target="_blank">
+							<div class="carousel-item roundCorners uimove2">
+								<img class="d-block w-100 blkBorder" style="height: 27%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Little_Red_Riding_Hood_-_J._W._Smith.jpg/1200px-Little_Red_Riding_Hood_-_J._W._Smith.jpg"
+									alt="Second slide">
+								<div class="carousel-caption d-none d-md-block">
+									<div class="capCol02">
+										<a href='Exercise_n_01/Ex.1.html' class="redText" target="_blank">
+											<h5><strong><em>Little Red...</em></strong></h5>
+											<p>Solve the riddles on the path of mystery...</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a href="Exercise_n_02/Ex.2.html" target="_blank">
+							<div class="carousel-item roundCorners uimove2">
+								<img class="d-block w-100 roundCorners blkBorder" src="01.png" alt="Third slide">
+								<div class="carousel-caption d-none d-md-block">
+									<div class="capCol">
+										<a href='Exercise_n_02/Ex.2.html' target="_blank">
+											<h4><strong>4-Letter-Word CROSSWORD!:</strong></h4>
+											<p>SOLVE IT NOW!</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<br />
+				<div class="centerText">
+					<button id="hideEl07" class="dispInline buttonHide uimove2">Hide Games</button>
+				</div>
+				<br /><br /><br /><br /><br /><br /><br /><br />
+			</div>
+		</div>
+	</div>
+
+	<div id="footer" class="container-fluid">
+		<div class="row">
+
+			<div class="col">
+				<br />
+				<h2><em>#idiomatiGO!</em></h2>
+				<p>
+					<em>CALL</em> (<em>Computer Assisted Language Learning</em>) as a new way of experiencing education. Join the community.
+				</p>
+				<p>
+					© 2020-2021 Vincenzo Amendolara (vincenzo.amendolara2@studio.unibo.it)
+				</p>
+				<p>
+					<strong>Alma Mater - University of Bologna, Italy</strong> (<a href="https://www.unibo.it/it">https://www.unibo.it/it</a>)
+				</p>
+				<br /><br />
+			</div>
+			<div class="d-none d-md-block col">
+
+			</div>
+			<div class="col">
+				<br />
+				<h2>Contact us:</h2>
+				<p>
+					Ask for more educational content or personal lessons.<br />Leave us a message with your requests.
+				</p>
+
+				<form action="mailto:vincenzo.amendolara2@studio.unibo.it" method="post" enctype="text/plain">
+					<label class="weightBold" for="guestName">Your Name:</label><br />
+					<input type="text" name="Your Name" id="guestName"><br><br />
+					<label class="weightBold" for="guestMessage">Your Message:</label><br />
+					<textarea id="guestMessage" name="Your Message" rows="4" cols="40">
+
+          </textarea><br /><br />
+					<input type="submit" value="Send" class="uimove2">
+				</form>
+				<br />
+			</div>
+		</div>
+		<br />
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col d-none d-lg-block col">
+				</div>
+				<div class="col">
+					<p class="finalCaption">
+						<em>#idiomatiGO!</em> © 2020-2021 Vincenzo Amendolara
+					</p>
+				</div>
+				<div class="col d-none d-lg-block col">
+				</div>
+			</div>
+		</div>
+
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="readerJs.js"></script>
+		<script>
+
+		</script>
+
+
+</body>
+
+</html>

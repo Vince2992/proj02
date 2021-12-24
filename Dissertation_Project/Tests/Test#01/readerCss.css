@@ -1,0 +1,496 @@
+/*body {
+  background-image: linear-gradient(to left, #1fe0da, #1daade);
+}*/
+#one {
+  padding-top: 7%;
+  background: linear-gradient(-65deg, aqua, #d9d9d9, aqua, #008080, #0086b3, #1fe0da);
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  background-size: 400% 400%;
+  animation: bgMove 9s ease-in-out infinite;
+}
+
+#two {
+  padding-top: 8%;
+  padding-left: 2%;
+  background-image: linear-gradient(to right, #ffffff, #f0efed);
+  border-top: 4px solid grey;
+  border-right: 4px solid grey;
+  border-bottom: 4px solid grey;
+}
+
+#three {
+  padding-top: 7%;
+  background: linear-gradient(-65deg, aqua, #d9d9d9, aqua, #008080, #0086b3, #1fe0da);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+}
+
+#navbar {
+  background-image: linear-gradient(-35deg, white, #8c8c8c, #e6e6e6, #e1e2e3, #b3b1b1);
+  background-size: 450% 450%;
+  /*border-bottom: 2px solid black;*/
+  padding-bottom: 1%;
+  font-weight: bold;
+  animation: bgMove 11s ease-in-out infinite;
+}
+
+#footer {
+  background-image: linear-gradient(-35deg, white, #8c8c8c, #e6e6e6, #e1e2e3, #b3b1b1);
+  background-size: 450% 450%;
+  animation: bgMove 11s ease-in-out infinite;
+  padding-top: 2.5%;
+  padding-bottom: 1.3%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0, 50%;
+  }
+
+  25% {
+    background-position: 100%, 50%;
+  }
+
+  50% {
+    background-position: 50%, 50%;
+  }
+
+  75% {
+    background-position: 120%, 70%;
+  }
+
+  75% {
+    background-position: 100%, 50%;
+  }
+
+  100% {
+    background-position: 0, 50%;
+  }
+}
+
+.metal01 {
+  background-image: linear-gradient(-105deg, #8c8c8c, #e1e2e3, #ababab, white);
+  animation: bgMove 8s ease-in-out infinite;
+  background-size: 250% 250%;
+}
+
+/*.metal02 {
+  background-image: linear-gradient(-50deg, white, #e6e6e6, #e1e2e3, #8c8c8c);
+  animation: bgMove 10s ease-in-out infinite;
+  background-size: 200% 200%;*/
+}
+
+.accstyle {
+  background-image: linear-gradient(to right, white, grey);
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  border: 1px solid grey;
+  padding-left: 10%;
+}
+
+.uimove2:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 0.3s;
+}
+
+.uimove:hover {
+  transform: translate(4%, -4%);
+  transition: transform 0.3s;
+}
+
+.uimove4:hover {
+  transform: translate(-4%, -4%);
+  transition: transform 0.3s;
+}
+
+.uimove3:hover {
+  transform: translate(0, -8%);
+  transition: transform 0.1s;
+}
+
+.green {
+  background-color: green;
+  font-size: 1.5em;
+  transition: font-size 0.5s;
+}
+
+.green:hover {
+  color: white;
+  font-size: 1.8em;
+}
+
+.aqua {
+  background-color: aqua;
+  font-size: 1.5em;
+  transition: font-size 0.5s;
+}
+
+.aqua:hover {
+  color: white;
+  font-size: 1.8em;
+}
+
+.yellow {
+  background-color: yellow;
+  font-size: 1.5em;
+  transition: font-size 0.5s;
+}
+
+.yellow:hover {
+  color: white;
+  font-size: 1.8em;
+}
+
+.violet {
+  background-color: #b603fc;
+  font-size: 1.5em;
+  transition: font-size 0.5s;
+}
+
+.violet:hover {
+  color: white;
+  font-size: 1.8em;
+}
+
+.capCol {
+  background-image: linear-gradient(to right, #ffb300, #e36200);
+  padding: 2%;
+  border-radius: 5% 10%;
+  border: 3px solid black;
+  font-weight: bold;
+  padding: 2%;
+}
+
+.capCol02 {
+  background-image: linear-gradient(to right, lawngreen, #37b021);
+  border-radius: 5% 10%;
+  border: 3px solid black;
+  font-weight: bold;
+  padding: 1%;
+}
+
+.capCol03 {
+  background-image: linear-gradient(to right, #f4ff21, #848a0f);
+  padding: 7%;
+  border-radius: 5% 10%;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.findWord {
+  animation-name: bgChange;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+}
+
+@keyframes bgChange {
+  0% {
+    background-color: #ffffff;
+    font-size: 1em;
+  }
+
+  25% {
+    background-color: #c2ffa1;
+    font-size: 1.25em;
+  }
+
+  50% {
+    background-color: #86ff45;
+    font-size: 1.5em;
+  }
+
+  75% {
+    background-color: #86ff45;
+    font-size: 1.75em;
+  }
+
+  90% {
+    background-color: #6dff1f;
+    font-size: 2em;
+  }
+
+  100% {
+    background-color: #47ba09;
+    font-size: 2.25em;
+  }
+}
+
+#theoryBox {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  padding: 10%;
+  margin-bottom: 5%;
+  margin-left: 3%;
+  font-weight: bold;
+  border-radius: 10%;
+  border: 2px solid grey;
+}
+
+#textBox {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  padding: 10%;
+  margin-bottom: 5%;
+  margin-left: 2%;
+  font-weight: bold;
+  border-radius: 10%;
+  border: 2px solid grey;
+}
+
+#exerciseBox {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  padding: 5%;
+  margin-bottom: 3%;
+  margin-left: 2.1%;
+  font-weight: bold;
+  border-radius: 10%;
+  border: 2px solid grey;
+}
+
+#idiomBox {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  margin-bottom: 5%;
+  margin-left: 3%;
+  font-weight: bold;
+  border-radius: 2%;
+  border: 2px solid grey;
+}
+
+#noteBox {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  padding: 5%;
+  margin-bottom: 3%;
+  margin-left: 2.1%;
+  font-weight: bold;
+  border-radius: 10%;
+  border: 2px solid grey;
+}
+
+#checks {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  padding: 7%;
+  margin-left: 3%;
+  border-radius: 10%;
+  border: 2px solid grey;
+}
+
+#latWordList {
+  background-image: linear-gradient(to left, rgba(255, 255, 255), rgba(227, 232, 229));
+  padding: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 10%;
+  border: 2px solid grey;
+  margin-left: 2%;
+  display: none;
+}
+
+.wl {
+  background-image: linear-gradient(to right, lawngreen, #37b021);
+  font-family: 'Merriweather', serif;
+  color: #075fed;
+  font-weight: bold;
+  border: 3px solid black;
+  margin-bottom: 2px;
+}
+
+.wl:first-of-type {
+  color: #e1e2e3;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to left, yellow, #b7c423);
+}
+
+.blacktext {
+  color: black;
+}
+
+.card-body {
+  background-image: linear-gradient(to right, yellow, #fcd303, #fab20a);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+  font-family: 'Merriweather', serif;
+  border: 1px solid black;
+}
+
+.card-body.wordFilter {
+  background-image: linear-gradient(to right, white, #b5b5b5);
+  font-family: 'Merriweather', serif;
+  border: 1px solid black;
+}
+
+.btnmargn {
+  margin-right: 3%;
+}
+
+.redText {
+  color: red;
+  font-weight: bold;
+}
+
+.greenText {
+  color: green;
+  font-weight: bold;
+}
+
+.captionText {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5em;
+  ;
+}
+
+.theory {
+  background-image: linear-gradient(to right, lawngreen, #37b021);
+  text-align: left;
+}
+
+th {
+  background-image: linear-gradient(to right, #1fe0da, #1daade);
+  text-align: left;
+}
+
+th.watchOut {
+  background-image: linear-gradient(to right, #eda70e, #e36200);
+  text-align: left;
+}
+
+td.firstcell {
+  background-image: linear-gradient(to right, #1fe0da, #1daade);
+}
+
+td {
+  background-color: #f1f1c1;
+  font-size: 0.9em;
+}
+
+#headingOne, #headingTwo, #headingThree, #headingFour, #headingFive, #headingSix, #headingSeven {
+  text-align: center;
+}
+
+.notes {
+  font-size: 0.7em;
+}
+
+.lessonLink {
+  font-size: 1.2em;
+}
+
+.colorHover01:hover {
+  text-shadow: 0.2em 0 0.2em yellow;
+}
+
+.colorHover01 {
+  font-size: 0.9em;
+}
+
+#v-pills-wordlist-tab {
+  color: red;
+}
+
+/*.wordFilter {
+  background-image: linear-gradient(to right, white, grey);
+}*/
+.fokused {
+  background-color: grey;
+}
+
+.lilBtn {
+  font-size: 0.4em;
+}
+
+.weightBold {
+  font-weight: bold;
+}
+
+.decUnderline {
+  text-decoration: underline;
+}
+
+#stopEvrth {
+  border-radius: 2em;
+}
+
+.roundCorners {
+  border-radius: 2em;
+}
+
+.blkBorder {
+  border: 3px solid black;
+  ;
+}
+
+#wordlistToggler {
+  margin-left: 1.5%;
+  background-image: linear-gradient(to right, lawngreen, #37b021);
+  font-weight: bold;
+  border: 0;
+}
+
+#readerName {
+  text-align: center;
+  /*text-decoration: underline;*/
+  font-weight: bold;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.dispInline {
+  display: inline;
+}
+
+.buttonHide {
+  border-radius: 2%;
+  font-size: 0.8em;
+  ;
+}
+
+.noDisplay {
+  display: none;
+}
+
+.slightBordRad {
+  border-radius: 6%;
+}
+
+.foundWord {
+  background-color: #ffc68a;
+}
+
+#exampleModalCenterTitle01, #exampleModalCenterTitle02 {
+  font-size: 1.8em;
+}
+
+.finalCaption {
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 0.1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+hr {
+  border-bottom: solid 4px #4d4d4d;
+  width: 64%;
+  box-shadow: 3px 5px 7px 5px #b3b3b3;
+}

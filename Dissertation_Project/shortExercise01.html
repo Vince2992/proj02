@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<style>
+  #ulSelectB {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .selectli {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  #selectBox{
+    border: solid 2px green;
+    width:50%;
+  }
+
+  .col-8 {
+    padding-top:4%;
+    padding-bottom:4%;
+  }
+
+  h1, h3 {
+    text-align: center;
+  }
+
+</style>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+
+      </div>
+      <div class="col-8">
+        <div id="ex1">
+            <h1><em>#IdiomatiGO</em> Exercises: </h1>
+            <br />
+            <h3>Short Exercise #01:<br />
+                (Idioms)
+            </h3>
+            <br /><br />
+
+            <h4>A. Complete using the words in the box:</h4>
+            <br />
+            <div id="selectBox">
+              <ul id="ulSelectB">
+                <li class="selectli">
+                  bell
+                </li>
+                <li class="selectli">
+                  bend
+                </li>
+                <li class="selectli">
+                  hairs
+                </li>
+                <li class="selectli">
+                  two
+                </li>
+                <li class="selectli">
+                  what
+                </li>
+                <li class="selectli">
+                  wits
+                </li>
+              </ul>
+              </div>
+            <br />
+            <br />
+            <ol>
+              <li>
+                The name Alan Hickson rings a <input type="text" id="bell" />, but I can't place him. <button onclick="bell()">Check</button>
+              </li>
+              <br>
+              <li>
+                Stop wasting time splitting <input type="text" id="hairs" /> and look at the big picture. <button onclick="hairs()">Check</button>
+              </li>
+              <br />
+              <li>
+                Ask Simon about the sales targets. He always knows what's <input type="text" id="what" />. <button onclick="what()">Check</button>
+              </li>
+              <br />
+              <li>
+                You've got to have your <input type="text" id="wits" /> about you to suceed in advertising. <button onclick="wits()">Check</button>
+              </li>
+              <br />
+              <li>
+                No one told us that Diana was leaving, but we all put two and <input type="text" id="two" /> together. <button onclick="two()">Check</button>
+              </li>
+              <br />
+              <li>
+                I'm going to go round the <input type="text" id="bend" /> if they don't turn that music down soon. <button onclick="bend()">Check</button>
+              </li>
+
+            </ol>
+
+          </div>
+      </div>
+      <div class="col-2">
+
+      </div>
+    </div>
+  </div>
+
+
+      <br /><br />
+    <script>
+    function bell() {
+        let one = document.getElementById("bell").value;
+        if (one === "bell") {
+          document.getElementById("bell").style.backgroundColor = "green";
+        } else {
+          document.getElementById("bell").style.backgroundColor = "red";
+
+        }
+      }
+
+      function hairs() {
+        let one = document.getElementById("hairs").value;
+        if (one === "hairs") {
+          document.getElementById("hairs").style.backgroundColor = "green";
+        } else {
+          document.getElementById("hairs").style.backgroundColor = "red";
+
+        }
+      }
+
+      function what() {
+        let one = document.getElementById("what").value;
+        if (one === "what") {
+          document.getElementById("what").style.backgroundColor = "green";
+        } else {
+          document.getElementById("what").style.backgroundColor = "red";
+
+        }
+      }
+
+      function wits() {
+        let one = document.getElementById("wits").value;
+        if (one === "wits") {
+          document.getElementById("wits").style.backgroundColor = "green";
+        } else {
+          document.getElementById("wits").style.backgroundColor = "red";
+
+        }
+      }
+
+
+      function two() {
+        let one = document.getElementById("two").value;
+        if (one === "two") {
+          document.getElementById("two").style.backgroundColor = "green";
+        } else {
+          document.getElementById("two").style.backgroundColor = "red";
+
+        }
+      }
+
+      function bend() {
+        let one = document.getElementById("bend").value;
+        if (one === "bend") {
+          document.getElementById("bend").style.backgroundColor = "green";
+        } else {
+          document.getElementById("bend").style.backgroundColor = "red";
+
+        }
+      }
+
+    </script>
+
+</body>
+
+</html>

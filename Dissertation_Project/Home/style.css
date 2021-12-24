@@ -1,0 +1,131 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Grandstander', cursive;
+}
+
+#landing {
+  margin: 2rem auto 8rem;
+  padding-top: 2rem;
+}
+
+#landing h1 {
+  font-size: 2.4rem;
+}
+
+.video-background {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.caption {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  color: white;
+  background-color: rgba(145, 143, 142, 0.7);
+  font-weight: bolder;
+  padding: 1rem 1rem;
+}
+
+.caption h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  text-shadow: .1rem .1rem .7rem black;
+  padding-bottom: 1rem;
+}
+
+#getStarted {
+  border-width: medium;
+  font-size: 1.2rem;
+  padding: .5rem 1.3rem;
+}
+
+.btn-info {
+  border-width: medium;
+  border-radius: 1;
+  padding: .6rem 1.2rem;
+  font-size: 1.2rem;
+  margin: 1rem;
+  border-color: black;
+  color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: #189582;
+  background-color: #189582;
+  color: white;
+}
+
+#mainNavbar {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+#mainNavbar .nav-link {
+  color: white;
+}
+
+#mainNavbar .nav-link:hover {
+  color: #EA1C2C;
+}
+
+#mainNavbar .navbar-brand {
+  color: white;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.navbar.scrolled {
+  background: linear-gradient(#eb4034, #eb7434);
+  ;
+  transition: background 300ms;
+}
+
+@media (max-width: 768px) {
+  .caption h1 {
+    font-size: 1.3rem;
+    letter-spacing: .15rem;
+    padding-bottom: .5rem;
+  }
+
+.caption h3 {
+    font-size: 1.1rem;
+    text-shadow: .1rem .1rem .4rem black;
+    padding-bottom: 1.2rem;
+  }
+
+#getStarted {
+    font-size: 1rem;
+    padding: .5rem 1rem;
+  }
+}
+
+#wall-e {
+  margin-left: 20%;
+  width: 80%;
+}
+
+#robb-y {
+  margin-right: 20%;
+  width: 80%;
+}
+
+#footerIm {
+  background-image: url("https://images.unsplash.com/photo-1582571352032-448f7928eca3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1156&q=80");
+  background-color: #32a832;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#finText {
+  width: 40%;
+  background-color: white;
+  margin-top: 40%;
+  margin-left: 30%;
+}

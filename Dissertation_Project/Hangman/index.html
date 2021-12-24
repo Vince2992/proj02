@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>#HangInThere</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Nerko One', cursive;
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      background-color: black;
+    }
+
+    #colTwo {
+      background-image: url("parchment.png");
+      background-color: #cccccc;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 22%;
+    }
+
+    input {
+      border: 2px solid #999;
+      font-family: Helvetica, sans-serif;
+      color: #999;
+    }
+
+    #stage {
+      font-family: 'Permanent Marker', 'cursive';
+      font-size: 2.0em;
+    }
+
+    h1 {
+      font-family: 'Nerko One', cursive;
+      font-size: 3em;
+    }
+
+    #hangman {
+      width: 250px;
+      height: 250px;
+      border-width: 5px;
+      border-style: outset;
+      transition: width 1s;
+      transition: height 1s;
+    }
+
+    #hangman:hover {
+      width: 310px;
+      height: 310px;
+      border-width: 5px;
+      border-style: outset;
+    }
+
+    input[type="text"] {
+      padding: 0.5%;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+    }
+
+    input[type="text"]:focus {
+      padding: 0.5%;
+      background-color: black;
+    }
+
+    input[type="text"]:hover {
+      padding: 0.5%;
+      background-color: black;
+    }
+
+    input[type="button"] {
+      color: white;
+      background-color: black;
+      font-weight: bold;
+      padding: 0.5%;
+      border-radius: 8%;
+    }
+
+    input[type="button"]:hover {
+      color: black;
+      background-color: white;
+      font-weight: bold;
+      padding: 0.5%;
+      border-radius: 7%;
+      border-color: black;
+      border-width: 8%;
+    }
+
+    #def {
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+
+    #eyes {
+      transition: transform 1s;
+    }
+
+    #eyes:hover {
+      transform: scaleX(1.5);
+      font-weight: bold;
+    }
+
+    #newGame {
+      transition: transform 1s;
+    }
+
+    #newGame:hover {
+      transform: scale(1.5);
+    }
+
+    #whitie {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      animation: whitieMove 5s infinite;
+      transition: transform 1s;
+      transition: margin-left 0.5s;
+    }
+
+    #whitie:hover {
+      transform: rotate(50deg);
+      margin-left: 25%;
+      transform: scaleX(1.5);
+    }
+
+
+    @keyframes whitieMove {
+      0% {
+        top: 0px;
+      }
+
+      20% {
+        top: 30%;
+      }
+
+      40% {
+        top: 10%;
+      }
+
+      60% {
+        top: 50%;
+      }
+
+      80% {
+        top: 10%;
+      }
+
+      100% {
+        top: 0px;
+      }
+    }
+
+    #blackie {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      animation: blackieMove 5s infinite;
+      margin-top: 20%;
+      transition: transform 2s;
+      transition: margin-right 1s;
+    }
+
+    #blackie:hover {
+      transform: rotate(-70deg);
+      margin-right: 30%;
+    }
+
+    @keyframes blackieMove {
+      0% {
+        top: 0px;
+      }
+
+      20% {
+        top: 60%;
+      }
+
+      40% {
+        top: 10%;
+      }
+
+      60% {
+        top: 40%;
+      }
+
+      80% {
+        top: 10%;
+      }
+
+      100% {
+        top: 0px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="colOne" class="col-sm">
+        <img id="blackie" src="blackie.png" />
+      </div>
+      <div id="colTwo" class="col-sm">
+        <br /><br /><br />
+        <h1 id="eyes">O _ O</h1>
+        <hr />
+        <h1>Defeat the Hangman!</h1>
+        <h2>"Hang" in there! Don't panic! ;)</h2>
+        <br />
+        <img src="00.png" id="hangman"><br />
+        <p id="stage"></p>
+        <p id="def"></p>
+        <form name="guessForm">
+          <input name="yourGuess" type="text" size="4" maxlength="1">
+          <input name="guessButton" type="button" value="GUESS" onClick="checkLetter()">
+        </form>
+        <br />
+        <p id="guessLetter">LETTERS NOT PRESENT:</p>
+        <br />
+        <input id="newGame" name="New Game" type="button" value="NEW GAME!" onClick="location.reload()">
+        <br /><br />
+      </div>
+      <div id="colThree" class="col-sm">
+        <img id="whitie" src="whitie.png" />
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <script>
+
+    let wordsToFind = [
+      ["A", "B", "S", "U", "R", "D"],
+      ["T", "H", "E", "A", "T", "E", "R"],
+      ["W", "A", "L", "L", "A", "B", "Y"],
+      ["S", "C", "I", "E", "N", "C", "E"],
+      ["B", "A", "N", "J", "O"],
+      ["S", "Q", "U", "I", "R", "R", "E", "L"],
+      ["C", "H", "I", "M", "P", "A", "N", "Z", "E", "E"],
+      ["S", "T", "A", "R", "T", "L", "E"],
+      ["M", "I", "L", "D"]
+    ]
+
+    let random = Math.floor((Math.random() * (wordsToFind.length - 1)));
+
+    let WORDToFind = wordsToFind[random];
+    let hiddenWord = new Array(WORDToFind.length);
+    let wrongGuess = 0;
+
+
+    for (let i = 0; i < hiddenWord.length; i++) {
+      hiddenWord[i] = "_ ";
+    }
+
+
+    function printLetter() {
+      for (let i = 0; i < hiddenWord.length; i++) {
+        let stage = document.getElementById("stage");
+        let letter = document.createTextNode(hiddenWord[i]);
+        stage.appendChild(letter);
+      }
+    }
+
+
+    switch (random) {
+      case 0:
+        definition = "'extremely silly, foolish, or unreasonable : completely ridiculous'";
+        break;
+      case 1:
+        definition = "'a building where plays, shows, etc., are performed on a stage'";
+        break;
+      case 2:
+        definition = "'an Australian animal that is like a small kangaroo'";
+        break;
+      case 3:
+        definition = "'knowledge about or study of the natural world based on facts learned through experiments and observation'";
+        break;
+      case 4:
+        definition = "'a musical instrument like a small guitar with a round body, a long neck, and four or five strings'";
+        break;
+      case 5:
+        definition = "'a small animal with a long tail and soft fur that lives in trees'";
+        break;
+      case 6:
+        definition = "'an intelligent animal that is a type of ape and that lives mostly in trees in Africa'";
+        break;
+      case 7:
+        definition = "'to surprise or frighten (someone) suddenly and usually not seriously'";
+        break;
+      case 8:
+        definition = "'not strong or harsh in taste'";
+    }
+
+    document.getElementById("def").innerHTML = definition;
+
+
+    let checkLetter = function() {
+      let gForm = document.guessForm;
+      let eYGuess = gForm.elements["yourGuess"];
+      let yourInput = eYGuess.value;
+      yourInput = yourInput.toUpperCase();
+      for (let i = 0; i < WORDToFind.length; i++) {
+        if (WORDToFind[i] === yourInput) {
+          hiddenWord[i] = yourInput + " ";
+          var guessED = true;
+        }
+        eYGuess.value = "";
+      }
+
+      let stage = document.getElementById("stage");
+      stage.innerHTML = "";
+      printLetter();
+
+
+      if (!guessED) {
+        let guessLetter = document.getElementById("guessLetter");
+        let letter = document.createTextNode(" " + yourInput);
+        guessLetter.appendChild(letter);
+        wrongGuess++;
+        let hangman = document.getElementById("hangman");
+        hangman.src = "0" + wrongGuess + ".png";
+      }
+
+
+      let allFound = true;
+      for (let i = 0; i < hiddenWord.length; i++) {
+        if (hiddenWord[i] === "_ ") {
+          allFound = false;
+        }
+      }
+      if (allFound) {
+        window.alert("Yayyy! You won!");
+        let hangman = document.getElementById("hangman");
+        hangman.src = "xx.png";
+      } else if (wrongGuess === 7) {
+        window.alert("Sorry, you've lost... :(");
+      }
+    }
+
+    function init() {
+      printLetter();
+    }
+
+    window.onload = init;
+
+  </script>
+</body>
+
+</html>

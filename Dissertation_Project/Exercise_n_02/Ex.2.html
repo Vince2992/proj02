@@ -1,0 +1,325 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>4-letter Word Crossword Puzzle</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    body {
+      text-align: center;
+      background-image: url("parchment.png");
+      background-color: #cccccc;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: 'Indie Flower', cursive;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+
+
+    h3,
+    h4 {
+      color: red;
+    }
+
+    input {
+      border: 4px solid black;
+      width: 4em;
+      height: 4em;
+      margin: 0.2em;
+      text-transform: uppercase;
+      font-size: 1em;
+      text-align: center;
+      color: black;
+      font-weight: bold;
+    }
+
+
+    input:disabled {
+      background-color: black;
+    }
+
+    span {
+      padding-left: 1px;
+    }
+
+
+    .ziffernX {
+      margin: 2.5em;
+    }
+
+    #cheat {
+      float: right;
+      margin: 0.7em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>4-letter Word Crossword Puzzle:</h1>
+  <h4>Accept the challenge!</h4>
+  <br /><br />
+  <span class="ziffernX">1</span><span class="ziffernX">2</span><span class="ziffernX">3</span><span class="ziffernX">4</span><span class="ziffernX">5</span>
+  <div>
+    <span class="ziffernY">1</span>
+    <input type="text" maxlength="1" id="chip01">
+    <input type="text" id="chip02" disabled>
+    <input type="text" id="chip03" disabled>
+    <input type="text" id="chip04" disabled>
+    <input type="text" id="chip05" disabled>
+  </div>
+  <div>
+    <span class="ziffernY">2</span>
+    <input type="text" maxlength="1" id="chip11">
+    <input type="text" maxlength="1" id="chip12">
+    <input type="text" id="chip13" disabled>
+    <input type="text" maxlength="1" id="chip14">
+    <input type="text" maxlength="1" id="chip15">
+  </div>
+  <div>
+    <span class="ziffernY">3</span>
+    <input type="text" maxlength="1" id="chip21">
+    <input type="text" maxlength="1" id="chip22">
+    <input type="text" maxlength="1" id="chip23">
+    <input type="text" maxlength="1" id="chip24">
+    <input type="text" maxlength="1" id="chip25">
+  </div>
+  <div>
+    <span class="ziffernY">4</span>
+    <input type="text" maxlength="1" id="chip31">
+    <input type="text" maxlength="1" id="chip32">
+    <input type="text" id="chip33" disabled>
+    <input type="text" maxlength="1" id="chip34">
+    <input type="text" maxlength="1" id="chip35">
+  </div>
+  <div>
+    <span class="ziffernY">5</span>
+    <input type="text" id="chip41" disabled>
+    <input type="text" maxlength="1" id="chip42">
+    <input type="text" maxlength="1" id="chip43">
+    <input type="text" maxlength="1" id="chip44">
+    <input type="text" maxlength="1" id="chip45">
+  </div>
+  <p style="color: #006600; font-size: 0.8em; margin-top:0.4em;">
+    (Use "hints" if something is tripping you up! ;)
+  </p>
+  <br />
+  <h3>Across:</h3>
+  <p>3: "an amount of money that you pay as a punishment for breaking a law or rule..." <span class="hint"><sup><a href="" data-toggle="modal" data-target="#hintModal1">Hint</a></sup></span></p>
+  <p>5: "past tense and past participle of sell..." <span class="hint"><sup><a href="" data-toggle="modal" data-target="#hintModal2">Hint</a></sup></span></p>
+
+  <h3>Down:</h3>
+  <p>1: "not able or likely to be hurt or harmed in any way : not in danger..." <span class="hint"><sup><a href="" data-toggle="modal" data-target="#hintModal3">Hint</a></sup></span></p>
+  <p>2: "to have a strong and often unfair influence on (someone or something)..." <span class="hint"><sup><a href="" data-toggle="modal" data-target="#hintModal4">Hint</a></sup></span></p>
+  <p>4: "an agreement between two or more people or groups that helps each in some way..." <span class="hint"><sup><a href="" data-toggle="modal" data-target="#hintModal5">Hint</a></sup></span></p>
+  <p>5: "a small piece of stiff paper that is marked with symbols or pictures to show its value,<br />comes in a set, and is used for playing games (such as poker)..." <span class="hint"><sup><a href="" data-toggle="modal" data-target="#hintModal6">Hint</a></sup></span></p>
+
+  <button id="cheat" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cheatsheet">Achtung! Cheat sheet! Don't peek!!!</button>
+
+  <div class="modal fade" id="hintModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Hint 1:</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          "He had to pay a heavy fxxx for speeding."
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hintModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Hint 2:</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          "She xxxd him a watch for $20."
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hintModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Hint 3:</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          "We need to make sure that the children are sxxx and sound."
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hintModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Hint 4:</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          "The circumstances could bxxx the results of the survey."
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hintModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Hint 5:</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          - "I'll make you a xxxl. If you help me fix my flat tire, I'll buy you dinner." - "Xxxl!"
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hintModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Hint 6:</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          "Shuffle the cxxxs."
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="cheatsheet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><em>Ssshhh... Cheat Sheet :</em></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>Across:</h3>
+          <ul style="list-style: none;">
+            <li>
+              1: fine;
+            </li>
+            <li>
+              5: sold;
+            </li>
+          </ul>
+          <h3>Down:</h3>
+          <ul style="list-style: none;">
+            <li>
+              1: safe;
+            </li>
+            <li>
+              2: bias;
+            </li>
+            <li>
+              3: deal;
+            </li>
+            <li>
+              5: card.
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+
+    let answers = $("input:not(:disabled)");
+
+    let solu = [
+      "chip01",
+      "chip11",
+      "chip12",
+      "chip14",
+      "chip15",
+      "chip21",
+      "chip22",
+      "chip23",
+      "chip24",
+      "chip25",
+      "chip31",
+      "chip32",
+      "chip34",
+      "chip35",
+      "chip42",
+      "chip43",
+      "chip44",
+      "chip45"
+    ];
+
+    let arr = ["s", "a", "b", "d", "c", "f", "i", "n", "e", "a", "e", "a", "a", "r", "s", "o", "l", "d" ];
+
+    answers.keyup(function(e) {
+      let indCheck = e.target.id;
+      let indX = solu.indexOf(indCheck);
+      let answer = arr[indX];
+      let myInput = $(this).val().toLowerCase();
+      if (myInput == answer) {
+        $(this).css("background-color", "green");
+        $(this).attr("disabled", "true");
+      } else {
+        $(this).css("background-color", "red");
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+#cardTitle {
+  text-align: center;
+  font-family: 'Itim', cursive;
+  font-size: 3.5em;
+  font-weight: bold;
+  background-color: white;
+}
+
+.cardTitleS {
+  padding-top: 3%;
+  text-align: center;
+  font-family: 'Itim', cursive;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+#cardTitle:hover {
+  color: #ff8205;
+}
+
+.hovCol {
+  text-align: center;
+  font-family: 'Itim', cursive;
+  font-size: 3.5em;
+  font-weight: bold;
+  background-color: white;
+}
+
+.hovCol:hover {
+  color: #ff8205;
+}
+
+.hovRed:hover {
+  color: red;
+}
+
+.cardImg {
+  width: 80%;
+  margin-left: 4.7em;
+  border: 0.5em solid black;
+}
+
+.cardImg:hover {
+  transform: scale(1.4, 1.4);
+  transition: transform 0.6s;
+}
+
+.langPin {
+  border: 1px solid black;
+  border-radius: 3%;
+}
+
+.langCard {
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Itim', cursive;
+  color: #ffdd1f;
+  /*background-image: linear-gradient(to right, #fff700, #fff70a, #ffeb0a, #ffd640, #ffb30f);*/
+  /*background: linear-gradient(-45deg, #ff8214, #ffb30f, #ffd640, #ffeb0a, #fff70a, #fff700);*/
+  background: linear-gradient(-45deg, #129900, #31bd02, #47d102, #80ff00);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+}
+
+.langCard:hover {
+  color: #9600ed;
+}
+
+.descPane {
+  margin-top: 1.5em;
+  background-color: #fcfce1;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.langPin.active {
+  color: red;
+}
+
+.one {
+  padding-top: 7%;
+  background: linear-gradient(-65deg, #006e87, #00b1d9, #03e3fc, #03fffb);
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  background-size: 400% 400%;
+  animation: bgMove 9s ease-in-out infinite;
+}
+
+.two {
+  padding-top: 8%;
+  background-image: linear-gradient(to right, #ffffff, #f0efed);
+  border-top: 4px solid grey;
+  border-right: 4px solid grey;
+}
+
+.three {
+  padding-top: 1%;
+  background-image: linear-gradient(to right, #ffffff, #f0efed);
+  border-left: 4px solid grey;
+  border-bottom: 4px solid grey;
+}
+
+.four {
+  background: linear-gradient(-75deg, #016107, #129900, #47d102, #80ff00, #a1fc17);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+  border-top: 4px solid grey;
+}
+
+.five {
+  padding-top: 3%;
+  background: linear-gradient(-65deg, #006e87, #00b1d9, #03e3fc, #03fffb);
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  background-size: 400% 400%;
+  animation: bgMove 9s ease-in-out infinite;
+}
+
+
+.six {
+  padding-top: 3%;
+  background: linear-gradient(-65deg,  #ffda0a, #ffc60a, #ffa50a, #ffa319, #ff810a, #ff4b0a, #ff0a0a);
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  background-size: 400% 400%;
+  animation: bgMove 9s ease-in-out infinite;
+}
+
+.seven {
+  padding-top: 3%;
+  background: linear-gradient(-65deg, #ff810a, #ffa319, #ffa50a, #ffc60a, #ffda0a, #ffef0a, #ffff0a);
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  background-size: 400% 400%;
+  animation: bgMove 9s ease-in-out infinite;
+}
+
+
+.diVideo {
+  padding-top:4%;
+  padding-left: 12%;
+  padding-bottom: 7%;
+}
+
+
+
+#cardCategory01 {
+  background: linear-gradient(-65deg, #757575, #a3a3a3, #cfcfcf, #e8e7e6, #ededed, #ffffff);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+  border-top: 4px solid grey;
+}
+
+#cardCategory02 {
+  background: linear-gradient(-65deg, #757575, #a3a3a3, #cfcfcf, #e8e7e6, #ededed, #ffffff);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+  border-top: 4px solid grey;
+}
+
+#cardCategory03 {
+  background: linear-gradient(-65deg, #a3a3a3, #cfcfcf, #e8e7e6, #ededed, #ffffff);
+  animation: bgMove 9s ease-in-out infinite;
+  background-size: 400% 400%;
+  border-top: 4px solid grey;
+}
+
+#myVideo {
+  border: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#wordFilter {
+  border: 2px solid black;
+  font-family: 'Itim', cursive;
+}
+
+
+#footer {
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(-35deg, white, #8c8c8c, #e6e6e6, #e1e2e3, #b3b1b1);
+  background-size: 450% 450%;
+  animation: bgMove 11s ease-in-out infinite;
+  padding-top: 2.5%;
+  padding-bottom: 1.3%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.paneList {
+  margin-left: 1.5em;
+}
+
+.paneListTitle {
+  font-weight: bold;
+}
+
+#wordListCard:hover {
+  transform: scale(1.4, 1.4);
+  transition: transform 0.3s;
+}
+
+.uiZoom:hover {
+  transform: scale(1.4, 1.4);
+  transition: transform 0.3s;
+}
+
+.uiZoom02:hover {
+  transform: scale(1.2, 1.2);
+  transition: transform 0.3s;
+}
+
+.uiZoom03:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 0.3s;
+}
+
+#emojicard {
+  background: linear-gradient(-65deg, #ffff4d, #ffff80, #80ff80);
+  background-size: 400% 400%;
+  animation: bgMove 9s ease-in-out infinite;
+}
+
+.txtshdw {
+  text-shadow: 1.3px 1.3px 2px black, 0 0 16px #D0D0D0, 0 0 5px gray;
+}
+
+.paddinggen {
+  padding-left: 13%;
+  padding-right: 13%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5em;
+}
+
+.ff {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.redbbigText {
+  color: red;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.margeLEFT {
+  margin-left: 40%;
+}
