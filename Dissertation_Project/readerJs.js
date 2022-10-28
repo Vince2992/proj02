@@ -123,7 +123,7 @@ $('#idioms').on("click", function() {
 
 function textToAudio() {
   /*let msg = document.getElementById("two").textContent;*/
-  let msg = document.getElementById("textOutput").textContent;
+  let msg = document.getElementById("two").textContent;
 
   let speech = new SpeechSynthesisUtterance();
   speech.lang = "en-US"; /*"de-DE";*/
@@ -165,7 +165,7 @@ function readPause() {
 
 function readResume() {
   /*let msg = document.getElementById("two").textContent;*/
-  let msg = document.getElementById("textOutput").textContent;
+  let msg = document.getElementById("two").textContent;
 
   let speech = new SpeechSynthesisUtterance();
   speech.lang = "en-US"; /*"de-DE";*/
