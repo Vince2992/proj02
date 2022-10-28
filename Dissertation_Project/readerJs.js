@@ -185,7 +185,7 @@ function textToAudio2() {
   let ins = document.getElementById("insertSpeak").value;
 
   let repeat = new SpeechSynthesisUtterance();
-  repeat.lang = "de-DE";
+  repeat.lang = "en-US";
 
   repeat.text = ins;
   repeat.volume = 1;
