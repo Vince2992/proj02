@@ -126,7 +126,7 @@ function textToAudio() {
   let msg = document.getElementById("textOutput").textContent;
 
   let speech = new SpeechSynthesisUtterance();
-  speech.lang = "de-DE"; /*"en-US";*/
+  speech.lang = "en-US"; /*"de-DE";*/
 
   speech.text = msg;
   speech.volume = 1;
@@ -168,7 +168,7 @@ function readResume() {
   let msg = document.getElementById("textOutput").textContent;
 
   let speech = new SpeechSynthesisUtterance();
-  speech.lang = "de-DE"; /*"en-US";*/
+  speech.lang = "en-US"; /*"de-DE";*/
 
   speech.text = msg;
   speech.volume = 1;
