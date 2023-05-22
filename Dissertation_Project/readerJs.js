@@ -122,11 +122,11 @@ $('#idioms').on("click", function() {
 
 
 function textToAudio() {
-  /*let msg = document.getElementById("two").textContent;*/
-  let msg = document.getElementById("two").textContent;
+  /*let msg = document.getElementById("home").textContent;*/
+  let msg = document.getElementById("home").textContent;
 
   let speech = new SpeechSynthesisUtterance();
-  speech.lang = "en-US"; /*"de-DE";*/
+  speech.lang = "de-DE"; /*"en-US";*/
 
   speech.text = msg;
   speech.volume = 1;
@@ -164,11 +164,11 @@ function readPause() {
 
 
 function readResume() {
-  /*let msg = document.getElementById("two").textContent;*/
-  let msg = document.getElementById("two").textContent;
+  /*let msg = document.getElementById("home").textContent;*/
+  let msg = document.getElementById("home").textContent;
 
   let speech = new SpeechSynthesisUtterance();
-  speech.lang = "en-US"; /*"de-DE";*/
+  speech.lang = "de-DE"; /*"";*/
 
   speech.text = msg;
   speech.volume = 1;
@@ -185,7 +185,7 @@ function textToAudio2() {
   let ins = document.getElementById("insertSpeak").value;
 
   let repeat = new SpeechSynthesisUtterance();
-  repeat.lang = "en-US";
+  repeat.lang = "de-DE";
 
   repeat.text = ins;
   repeat.volume = 1;
